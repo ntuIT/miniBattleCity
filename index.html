@@ -24,21 +24,62 @@
 #canvasDiv canvas{position:absolute;}
 #canvasDiv{position: absolute; }
 
+leftNav {
+  float: left;
+}
+
+rightNav	{
+  float: right;
+}
+
 </style>
 
 </head>
 <body>
+
 <div class="container">
-<!--	<center><head><h3>Dùng phím W, A, S, D để di chuyển. Phím SPACE để bắn</h3></head></center> -->
+<script>
+	function keyPress(btnId, key) {
+		document.querySelector('body').dispatchEvent(new KeyboardEvent('keypress',{'key': key}));
+	}
+
+</script>
+	<table>
+	<tr>
+		<td>
+			<button id="btnGoUp" onclick="
+			dispatchEvent(new KeyboardEvent('keypress', {'key': 'UP'}));
+			">Up</button>
+			<br>
+			<button onclick="keyboard.LEFT">Left</button>
+			<button onclick="keyboard.RIGHT">Right</button>
+			<br>
+			<button onclick="keyboard.DOWN">Down</button>
+		</td>
+
+	<td>
 	<div class="main clearfix">
-		<div id="canvasDiv" >
+		<div id="canvasDiv" style="position: unset;">
 			<canvas id="wallCanvas" ></canvas> 
 			<canvas id="tankCanvas" ></canvas>
 			<canvas id="grassCanvas" ></canvas>
-			<canvas id="overCanvas" ></canvas> 
+			<canvas id="overCanvas" ></canvas>
 			<canvas id="stageCanvas" ></canvas>
 		</div>
-	</div>	
+	</div>
+	</td>
+
+	<td style="position: unset">
+		<button id="btnNext" >PreviousLevel</button>
+		<br>
+		<button>NextLevel</button>
+		<br>
+		<button id="btnFire" onclick="">Fire</button>
+	</td>
+
+	</tr>
+
+	</table>
 </div>
 
 </body>
