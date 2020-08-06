@@ -140,9 +140,9 @@ $(document).keydown(function(e){
 			keys.push(e.keyCode);
 		}
 		//射击
-		if(e.keyCode == keyboard.SPACE && player1.lives > 0){
+		if(e.keyCode == keyboard.ENTER && player1.lives > 0){
 			player1.shoot(BULLET_TYPE_PLAYER);
-		}else if(e.keyCode == keyboard.ENTER && player2.lives > 0){
+		}else if(e.keyCode == keyboard.SPACE && player2.lives > 0){
 			player2.shoot(BULLET_TYPE_ENEMY);
 		}else if(e.keyCode == keyboard.N){
 			nextLevel();
@@ -184,37 +184,37 @@ function drawBullet(){
 }
 
 function keyEvent(){
-	if(keys.contain(keyboard.W)){
+	if(keys.contain(keyboard.UP)){
 		player1.dir = UP;
 		player1.hit = false;
 		player1.move();
-	}else if(keys.contain(keyboard.S)){
+	}else if(keys.contain(keyboard.DOWN)){
 		player1.dir = DOWN;
 		player1.hit = false;
 		player1.move();
-	}else if(keys.contain(keyboard.A)){
+	}else if(keys.contain(keyboard.LEFT)){
 		player1.dir = LEFT;
 		player1.hit = false;
 		player1.move();
-	}else if(keys.contain(keyboard.D)){
+	}else if(keys.contain(keyboard.RIGHT)){
 		player1.dir = RIGHT;
 		player1.hit = false;
 		player1.move();
 	}
 	
-	if(keys.contain(keyboard.UP)){
+	if(keys.contain(keyboard.W)){
 		player2.dir = UP;
 		player2.hit = false;
 		player2.move();
-	}else if(keys.contain(keyboard.DOWN)){
+	}else if(keys.contain(keyboard.S)){
 		player2.dir = DOWN;
 		player2.hit = false;
 		player2.move();
-	}else if(keys.contain(keyboard.LEFT)){
+	}else if(keys.contain(keyboard.A)){
 		player2.dir = LEFT;
 		player2.hit = false;
 		player2.move();
-	}else if(keys.contain(keyboard.RIGHT)){
+	}else if(keys.contain(keyboard.D)){
 		player2.dir = RIGHT;
 		player2.hit = false;
 		player2.move();
